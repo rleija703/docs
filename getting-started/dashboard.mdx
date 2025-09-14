@@ -1,67 +1,87 @@
 ---
-title: "Dashboard Walkthrough"
-description: "Learn the layout of the Gextron dashboard and how to navigate effectively."
+title: "Pro Dashboard Overview"
+description: "Learn the layout and features of the Gextron Pro Dashboard."
 ---
 
-# 🖥️ Dashboard Walkthrough
+# 📊 Pro Dashboard Overview
 
-The **Gextron Dashboard** is your trading command center.  
-It organizes all of Gextron’s features into clear sections so you can quickly move from **analysis → decision → execution**.
+The **Pro Dashboard** is where Gextron brings together all of its most powerful tools — real-time equity & option tape, key levels, price targets, and unusual options activity — all in one interface.  
 
----
-
-## Main Sections
-
-### 🔑 Key Levels
-- Displays **support & resistance zones**, **P-Trans / N-Trans**, and **Gamma walls**.  
-- Updates dynamically throughout the trading day.  
-- Use these as reference points for entries, exits, and risk management.
+<Callout type="info">
+The Pro Dashboard updates **in real time** — no refresh required. Every tape print, UOA order, and level update streams instantly.
+</Callout>
 
 ---
 
-### 🎯 Price Targets
-- Daily & weekly targets for major tickers.  
-- Helps you define **profit-taking zones**.  
-- Shown visually on charts for clarity.
+## Layout at a Glance
+
+<Tabs>
+  <Tab title="Left Column: Equity Tape">
+    - Shows **every equity transaction** in real time.  
+    - Color-coded the same way as Option Flow and Option Tape:  
+      • **Green** = bullish side  
+      • **Red** = bearish side  
+      • **Background colors** = aggressive fills beyond bid/ask  
+    - Use this to confirm reactions at **AOIs, P-Trans, N-Trans, MaxReward, or MaxPaint**.  
+    <img src="/images/dashboard/pro-equity-tape.png" alt="Equity Tape in Pro Dashboard" />
+  </Tab>
+
+  <Tab title="Center: Levels & Targets">
+    - **Daily Levels** → Forward-looking support/resistance from option market math models.  
+    - **Price Targets** → Daily, weekly, monthly, quarterly, yearly targets with ranges.  
+    - **Call/Puts Dominated Histogram** → Visualizes net positioning at strikes (call side vs put side).  
+    - Hover over strikes to see **net positioning** (e.g., “5.39B net at strike 651.88”).  
+    <img src="/images/dashboard/pro-levels-targets.png" alt="Levels and Targets in Pro Dashboard" />
+  </Tab>
+
+  <Tab title="Right Column: Quote & UOA">
+    - **Quote Box** → Ticker details:  
+      • Symbol + security name  
+      • Spot, open, high, low, previous close  
+    - **Unusual Options (UOA)** → Real-time list of large trades:  
+      • Time, Contract, DTE, Premium, Spot  
+      • Same **color coding** as Option Flow  
+    - Filter UOA by **trading day** (today or up to 5 previous sessions).  
+    <img src="/images/dashboard/pro-uoa.png" alt="Quote and Unusual Options in Pro Dashboard" />
+  </Tab>
+
+  <Tab title="Bottom: Option Tape">
+    - Streams **every option trade** in real time.  
+    - Same color coding as UOA.  
+    - Filter by **Premium** (e.g., `>= 1000000` for million-dollar+ orders).  
+    - Filter by **Days to Expiration (DTE)**.  
+    - Lets you confirm aggressive buying/selling **at your marked levels**.  
+    <img src="/images/dashboard/pro-option-tape.png" alt="Option Tape in Pro Dashboard" />
+  </Tab>
+</Tabs>
 
 ---
 
-### 📊 Option Flow
-- Stream of **Unusual Options Activity (UOA)**.  
-- Color-coded for bullish vs bearish flow.  
-- Filters available by ticker, expiration, strike, and volume.
+## How to Use the Dashboard
+
+<Steps>
+  <Step title="Start with Levels & Targets">
+    Mark **P-Trans, N-Trans, AOIs, MaxReward, MaxPaint**, and the nearest **daily/weekly targets**.
+  </Step>
+  <Step title="Watch Equity Tape">
+    As price tests your levels, see if equity prints align with bullish (green) or bearish (red) activity.
+  </Step>
+  <Step title="Check UOA feed">
+    Look for large unusual options hitting near those levels, confirming direction.
+  </Step>
+  <Step title="Confirm with Option Tape">
+    Use premium/DTE filters to zoom in on **institutional-sized trades** at the exact levels you’re watching.
+  </Step>
+</Steps>
 
 ---
 
-### 🖇️ Tape
-- Real-time **order flow (equity & options)**.  
-- Includes sweeps, blocks, and prints.  
-- Helps confirm when large players are stepping in.
+## Key Takeaway
 
----
+The Pro Dashboard is designed so that:  
+- 📊 **Equity Tape** → shows how stock itself is trading  
+- 🔄 **UOA + Option Tape** → reveal institutional positioning  
+- 🎯 **Levels + Targets** → give the forward-looking roadmap  
 
-### 📰 News
-- Company-specific updates alongside global market news.  
-- Integrated so you don’t have to switch apps while trading.
+Together, they give you a **complete real-time picture** of price action + options flow at the levels that matter.
 
----
-
-## Navigation Tips
-
-- **Sidebar Navigation**: Switch between modules (Levels, Flow, Tape, News).  
-- **Search**: Quickly jump to a ticker or contract.  
-- **Filters**: Customize flow/tape feeds to match your strategy.  
-
----
-
-## Example Workflow
-
-1. Start the day by checking **Key Levels** on SPX / QQQ.  
-2. Cross-check with **Price Targets** to form your bias.  
-3. Watch **Option Flow** for confirmation (big sweeps or blocks).  
-4. Use the **Tape** to refine entry timing.  
-5. Stay updated with **News** to manage risk.  
-
----
-
-⚡ **Next Step:** Learn more about [Key Levels](/features/key-levels) and how they guide your trading decisions.

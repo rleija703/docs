@@ -28,7 +28,8 @@
               "features/key-levels",
               "features/price-targets",
               "features/option-flow",
-              "features/tape"
+              "features/tape",
+              "features/search"
             ]
           },
           {

@@ -1,66 +1,146 @@
 ---
 title: "Price Targets"
-description: "Use Gextron’s daily and weekly price targets to plan entries, exits, and risk management."
+description: "Forward-looking exit zones based on option premium flows."
 ---
 
 # 🎯 Price Targets
 
-Price Targets in Gextron give you **forward-looking levels** based on option premium flows.  
-They help you plan **where the market is likely headed** instead of reacting to lagging signals.
+Price Targets are one of the most **powerful features in Gextron**. They provide **forward-looking ranges** based on option premium flow and implied volatility.  
+
+---
+
+## Opening Price Targets in the Dashboard
+
+<Tabs>
+  <Tab title="Hero / Normal Dashboard">
+    - Click on a ticker to open its panel.  
+    - Look for the **Price Targets module** under the analysis section.  
+    - These are the **daily and weekly targets** available on Hero and Free dashboards.  
+    <img src="https://alfatoro.com/wp-content/uploads/2025/09/hero-dashboard-price-target.png" alt="Hero Dashboard Price Targets" />
+  </Tab>
+
+  <Tab title="Pro Dashboard">
+    - Open the ticker view in Pro.  
+    - Scroll down to the **Price Targets accordion**.  
+    - Expand to see **daily, weekly, monthly, quarterly, and yearly targets**.  
+    <img src="https://alfatoro.com/wp-content/uploads/2025/09/pro-dashboard-price-target.png" alt="Pro Dashboard Price Targets" />
+  </Tab>
+</Tabs>
 
 ---
 
 ## Why Price Targets Matter
 
-- Provide **clear exit zones** for profitable trades  
-- Help avoid **holding too long** after momentum fades  
-- Act as checkpoints to evaluate whether to **scale in or take profit**  
-- Align with institutional hedging mechanics  
+<Callout type="info">
+Price Targets provide **clear exit zones** and help set **realistic profit goals** by expiration date.
+</Callout>
+
+- They are **forward-looking**, not lagging.  
+- Derived from **option premium flow** + **implied volatility**.  
+- Help avoid chasing **far OTM contracts** with low probability of success.  
+- Allow traders to plan **entries, exits, spreads, and hedges** with precision.  
 
 ---
 
 ## Types of Price Targets
 
-### 📆 Daily Targets
-- Updated every session  
-- Useful for **intraday trades**  
-- Often coincide with **intraday key levels**  
+<AccordionGroup>
+  <Accordion title="Daily Targets">
+    • Best for **intraday and ETF trading** (SPY, QQQ, IWM).  
+    • Recalculate daily as IV shifts and theta contracts.  
+    • Mark them every morning during your pre-market prep.  
+    <Callout type="tip">
+      Daily targets are the **bread and butter** for SPX/ETF traders.
+    </Callout>
+  </Accordion>
+
+  <Accordion title="Weekly Targets (W)">
+    • Every **Friday expiration** is shown as `(W)` in Gextron.  
+    • If it’s a short week (holiday), the Friday expiration adjusts.  
+    • Great for swing trades or weekly income strategies.  
+  </Accordion>
+
+  <Accordion title="Monthly Targets">
+    • Gextron groups expirations by **month accordion**.  
+    • Open a month → see all available expirations.  
+    • Choose the **last Friday expiration of the month** as your monthly target.  
+    • Acts as the **top/bottom range for that month**.  
+  </Accordion>
+
+  <Accordion title="Quarterly Expected Moves (Q / QEM)">
+    • For **ETFs/indices** → shown as `(Q)` in Gextron.  
+    • For **equities** → use the expiration closest to the **next earnings date** (after earnings digests).  
+    • Mark as **QEM** on your chart.  
+    • Provides a **larger timeframe expected move** around quarterly catalysts.  
+  </Accordion>
+
+  <Accordion title="Yearly Targets">
+    • Use the **last week of December** or the **first week of January** after year end.  
+    • Mark these levels once the year begins.  
+    • Provides a long-term anchor to track annual ranges.  
+  </Accordion>
+</AccordionGroup>
 
 ---
 
-### 📆 Weekly Targets
-- Broader perspective  
-- Ideal for **swing trades** or higher timeframes  
-- Align with option expiration cycles  
+## How Gextron Builds Price Targets
+
+- Always forward-looking  
+- Based on **option premium flows**  
+- Calculated ranges include:  
+  - **Top range** → bullish target  
+  - **Bottom range** → bearish target  
+- Useful for:  
+  - Going long = top range target  
+  - Going short = bottom range target  
+  - Spreads = full range defines your boundaries  
+
+<Callout type="success">
+Price Targets update as **theta decays** and as **sides are hit**. Always re-check mid-session or after a target is reached.
+</Callout>
 
 ---
 
-## How to Apply Targets
+## Recommended Targets to Mark
 
-1. **Set Profit Goals**  
-   - Use the nearest target as your **first take-profit zone**.  
-   - Stretch goals = the next higher/lower target.  
-
-2. **Size Your Risk**  
-   - If price is far from target, risk/reward may be poor.  
-   - Best trades occur when **entry is near a level, with target close in range**.  
-
-3. **Combine with Key Levels**  
-   - Enter trades **near support/resistance**.  
-   - Exit **at or near Price Targets** for maximum efficiency.  
+<Steps>
+  <Step title="Mark Daily Targets">
+    Especially important for **SPY, QQQ, IWM**. These guide your intraday trades.
+  </Step>
+  <Step title="Add Weekly Targets">
+    Every Friday expiration. Use `(W)` markers in Gextron.
+  </Step>
+  <Step title="Set Monthly Targets">
+    Open the month accordion and mark the **last expiration of the month**.
+  </Step>
+  <Step title="Track Quarterly Expected Moves (Q / QEM)">
+    For ETFs = `(Q)` target.  
+    For equities = expiration closest to next **earnings date**.  
+  </Step>
+  <Step title="End-of-Year Target">
+    Mark the **last week of December** or **first week of January** to anchor the yearly range.
+  </Step>
+</Steps>
 
 ---
 
 ## Example Workflow
 
-- SPY opens near support above P-Trans.  
-- Daily Price Target = 525.  
-- Trader enters long calls at 520.  
-- Takes partial profit at 525, lets remainder run to weekly target at 532.  
+1. Pre-market → open ticker, mark **daily targets**.  
+2. Swing setups → add **weekly (W)** and **monthly** levels.  
+3. Quarterly catalyst → mark **QEM** or `(Q)` level.  
+4. Yearly anchor → mark end-of-year level.  
+5. Update targets mid-session if theta contracts or if one side is already hit.  
 
 ---
 
-## Next Steps
+## What to Read Next
 
-- 👉 Review [Key Levels](/features/key-levels) for entry zones.  
-- 👉 Confirm moves with [Option Flow](/features/option-flow).  
+<Columns cols={2}>
+  <Card title="Option Flow" icon="arrows-left-right" href="/features/option-flow">
+    Confirm trades by checking whether big players are buying or selling aggressively.
+  </Card>
+  <Card title="Risk & Reward" icon="scale-balanced" href="/trading/risk-reward">
+    Structure your exits using targets for at least **1:2 or 1:3 R:R**.
+  </Card>
+</Columns>
