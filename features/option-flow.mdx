@@ -1,65 +1,163 @@
 ---
 title: "Option Flow"
-description: "Track unusual options activity (UOA) and real-time bullish or bearish flow in Gextron."
+description: "Understand unusual options activity and how to read color-coded transactions in Gextron."
 ---
 
-# 📊 Option Flow
+# 🔄 Option Flow
 
-Option Flow shows you **what the big players are doing in real-time**.  
-It highlights **Unusual Options Activity (UOA)** — trades large enough to move markets.
+Option Flow shows you **large, unusual transactions** in the options market. These flows help you see where aggressive buyers and sellers are positioning, often before the move happens.
 
----
-
-## Why Option Flow is Powerful
-
-- Reveals **institutional sentiment** (bullish or bearish)  
-- Helps you **front-run momentum** before price reacts  
-- Confirms whether **Key Levels** are likely to hold or break  
-- Exposes **hidden positioning** not obvious from price charts  
+<Callout type="info" title="Real-time & always seeking">
+  Gextron’s Unusual Options feed **auto-updates in real time** and is **continuously scanning** for new prints. There’s no need to refresh; new orders stream in as they cross the tape.
+</Callout>
 
 ---
 
-## Types of Flow in Gextron
+## What you’ll see in Gextron
 
-### 🟢 Bullish Flow
-- Large call buys, often **at or above the ask**  
-- Sweeps = urgency → traders want exposure quickly  
-- Indicates **expectation of upward movement**  
-
----
-
-### 🔴 Bearish Flow
-- Large put buys, often **at or above the ask**  
-- Signals **hedging or directional bets to the downside**  
+When you open the **Unusual Options** feed in Gextron, each row shows:  
+- ⏱ **Time** of execution  
+- 📄 **Contract details** (ticker, strike, expiration)  
+- 📅 **Days to expiration (DTE)**  
+- 💰 **Premium** of the transaction  
+- 📈 **Spot price** of the underlying  
+- ⚖️ **Moneyness** (ITM, ATM, OTM)  
+- 🧾 **Order type** (Sweep or Block — or blank for large single prints)
 
 ---
 
-### ⚡ Unusual Options Activity (UOA)
-- Trades outside typical size/volume patterns  
-- Can act as **early signals** for big moves  
-- Especially powerful when aligned with **Key Levels**  
+## Sweep vs Block
+
+<AccordionGroup>
+  <Accordion title="Sweep Orders">
+    A **sweep** order is broken into smaller pieces and routed across multiple exchanges to **get filled quickly**.  
+    • Indicates **urgency** — trader wants in fast.  
+    • Seen as **more aggressive** than a block.  
+    • Often predictive if repeated near key levels.
+  </Accordion>
+
+  <Accordion title="Block Orders">
+    A **block** order is a single large trade, usually negotiated off-exchange between institutions.  
+    • Less urgency than a sweep.  
+    • Still important — shows **size positioning**, but may be part of a spread.  
+    • If order type cell is empty in Gextron → it’s just a **large block**.
+  </Accordion>
+</AccordionGroup>
 
 ---
 
-## Filters & Customization
+## Color Coding in Gextron
 
-- **Ticker-based filtering** (focus only on SPX, QQQ, etc.)  
-- **Expiration filtering** (weekly vs monthly contracts)  
-- **Strike filtering** (ITM, OTM, specific deltas)  
-- **Volume / premium thresholds** (highlight the biggest trades only)  
+Gextron color codes every transaction to make it easy to **see sentiment and aggressiveness**.
+
+<Tabs>
+  <Tab title="Text Colors">
+    - **White text** → Neutral sentiment  
+      • Could be noise or part of a spread.  
+      • Still useful in sequence context.  
+
+    - **Red text** → Bearish sentiment  
+      • **Put** bought at the **ask** → bearish bet.  
+      • **Call** sold at the **bid** → bearish exit.  
+
+    - **Green text** → Bullish sentiment  
+      • **Call** bought at the **ask** → bullish bet.  
+      • **Put** sold at the **bid** → bullish exit.  
+  </Tab>
+
+  <Tab title="Background Colors">
+    - **Red background** → Aggressively bearish  
+      • **Call** filled **below bid** = trader dumping bullish exposure.  
+      • **Put** filled **above ask** = trader paying up for bearish exposure.  
+
+    - **Green background** → Aggressively bullish  
+      • **Call** filled **above ask** = trader paying up for bullish exposure.  
+      • **Put** filled **below bid** = trader dumping bearish exposure.  
+  </Tab>
+</Tabs>
 
 ---
 
-## Example Use Case
+## Understanding Moneyness
 
-- QQQ is approaching resistance at P-Trans.  
-- A **massive call sweep** appears, 2x average size.  
-- Flow confirms buyers are aggressive.  
-➡️ Trader enters calls, targeting the next resistance or Price Target.  
+**ITM (In the Money)** → Contracts already have intrinsic value. Safer, more expensive.  
+**ATM (At the Money)** → Strike price ≈ underlying spot price. Most liquid, balanced risk/reward.  
+**OTM (Out of the Money)** → Purely speculative. Cheap, but lower probability unless flow is very aggressive.  
+
+Moneyness helps you filter **serious institutional bets** (ITM/ATM sweeps at size) vs **lottery tickets** (OTM noise).  
 
 ---
 
-## Next Steps
+## Filtering and Lookback
 
-- 👉 Learn how to confirm flow with the [Tape](/features/tape).  
-- 👉 Combine with [Price Targets](/features/price-targets) for precise exits.
+Gextron gives you flexibility to filter **only the flows that matter to you**.
+
+<Steps>
+  <Step title="Lookback window">
+    You can go back up to the **last 5 previous trading days** of Unusual Option Orders.
+  </Step>
+
+  <Step title="Filter by premium">
+    Only want to see **million-dollar orders**?  
+    Use the **premium filter operators**:  
+    - `>` greater than  
+    - `>=` greater than or equal to  
+    - `=` equal to  
+    - `<` less than  
+    - `<=` less than or equal to  
+
+    Example: `>= 1000000` → only shows orders **$1M or bigger**.
+  </Step>
+</Steps>
+
+<Callout type="tip">
+Premium filtering lets you quickly isolate **institutional-size trades** and ignore small retail noise.
+</Callout>
+
+---
+
+## Why Color + Context Matters
+
+- **Green text on calls at the ask** → institutions betting bullish.  
+- **Red text on puts at the ask** → institutions betting bearish.  
+- **White text neutral** → may be spreads → don’t overreact.  
+- **Background colors** show when traders are **paying up or dumping aggressively** beyond normal bid/ask.  
+
+<Callout type="warning">
+Never trade **color alone**. Always confirm with **P-Trans / N-Trans levels, MaxReward/MaxPaint, AOIs**, and the Tape.
+</Callout>
+
+---
+
+## Example Workflow
+
+<Steps>
+  <Step title="Watch first 15 minutes">
+    Note if **sweeps** cluster at levels (above P-Trans or below N-Trans).
+  </Step>
+  <Step title="Filter by DTE">
+    Focus on contracts with **2–3 weeks** to expiration (not zero-day noise).
+  </Step>
+  <Step title="Use Premium Filters">
+    Example: only show **orders >= $1,000,000** to focus on real institutional bets.
+  </Step>
+  <Step title="Color + Order Type">
+    Combine **text + background + sweep/block** to gauge conviction.
+  </Step>
+  <Step title="Confirm with Tape">
+    If Tape shows large prints in the same direction, confidence increases.
+  </Step>
+</Steps>
+
+---
+
+## What to Read Next
+
+<Columns cols={2}>
+  <Card title="Tape Reading" icon="chart-line" href="/features/tape">
+    Learn to confirm flow signals with live prints.
+  </Card>
+  <Card title="Risk & Reward" icon="scale-balanced" href="/trading/risk-reward">
+    Structure trades around flow with defined exits.
+  </Card>
+</Columns>

@@ -1,58 +1,132 @@
 ---
 title: "Tape Reading"
-description: "Use Gextron’s live stock and options tape to see order flow in real time."
+description: "Real-time order tape for equities and options in Gextron Pro."
 ---
 
-# 🖇️ Tape Reading
+# 📊 Tape Reading (Pro)
 
-The **Tape** (also called order flow) lets you see **trades as they happen**.  
-It’s the heartbeat of the market — showing you **where real money is moving**.
+Tape Reading is a **Pro-only feature** in Gextron. It gives you a **real-time stream of every transaction**, so you can see how price reacts when it hits **P-Trans, N-Trans, MaxReward, MaxPaint, or AOIs**.
 
----
-
-## Why Tape Matters
-
-- Exposes **large prints, blocks, and sweeps** in real time  
-- Helps confirm whether **flow is translating into executed orders**  
-- Gives you **precise timing** for entries and exits  
-- Builds confidence when entering near Key Levels  
+<Callout type="info" title="Real-time always on">
+The **Tape is always streaming**. No refresh needed — every transaction is captured and displayed the instant it crosses.
+</Callout>
 
 ---
 
-## Tape Types in Gextron
+## What you get in Pro
 
-### 📈 Equity Tape
-- Shows **stock trades** (shares, not options)  
-- Large prints = institutions moving size  
-- Useful for confirming **support or resistance holds**  
+<Tabs>
+  <Tab title="Equity Tape">
+    • Shows **every stock transaction** hitting the tape.  
+    • Same **color coding** as Option Flow.  
+    • Useful for seeing how equities behave at **levels** (buyers or sellers stepping in).  
+    <img src="/images/tape/equity-tape.png" alt="Equity Tape example" />
+  </Tab>
 
----
-
-### 📉 Option Tape
-- Displays **contract-level trades**  
-- Includes sweeps, blocks, and large prints  
-- Shows exactly **where traders are placing their bets**  
-
----
-
-## What to Watch
-
-- **Sweeps** → urgency, directional conviction  
-- **Blocks** → negotiated trades, often institutional  
-- **Unusual size/volume** → outlier prints worth attention  
+  <Tab title="Option Tape">
+    • Shows **every option transaction** in real time.  
+    • Same **color coding rules** as Unusual Options Activity.  
+    • Filter by **Premium** (as low as $1) or **Days to Expiration (DTE)**.  
+    • Same filter operators: `>`, `>=`, `=`, `<`, `<=`.  
+    <img src="/images/tape/option-tape.png" alt="Option Tape example" />
+  </Tab>
+</Tabs>
 
 ---
 
-## Example Workflow
+## Color Coding in the Tape
 
-- SPX is at resistance (Gamma wall).  
-- Option Flow shows call sweeps.  
-- The **Tape confirms multiple large prints** hitting the ask.  
-➡️ Trader enters long calls with higher conviction.  
+The Tape uses the **exact same system** as Option Flow:
+
+<Tabs>
+  <Tab title="Text Colors">
+    - **White text** → Neutral (often spreads / noise).  
+    - **Red text** → Bearish:  
+      • **Put** bought at ask  
+      • **Call** sold at bid  
+    - **Green text** → Bullish:  
+      • **Call** bought at ask  
+      • **Put** sold at bid  
+  </Tab>
+
+  <Tab title="Background Colors">
+    - **Red background** → Aggressively bearish  
+      • **Call** filled below bid  
+      • **Put** filled above ask  
+    - **Green background** → Aggressively bullish  
+      • **Call** filled above ask  
+      • **Put** filled below bid  
+  </Tab>
+</Tabs>
+
+<Callout type="tip">
+The Tape updates instantly — use **clusters of aggressive orders** at levels as confirmation.
+</Callout>
 
 ---
 
-## Next Steps
+## How to Use the Tape at Levels
 
-- 👉 Review [Option Flow](/features/option-flow) to spot big trades.  
-- 👉 Use [Key Levels](/features/key-levels) to anchor your tape reading.  
+<Steps>
+  <Step title="Support reaction">
+    If price taps a **support AOI** or **MaxPaint**, look for **green text / green background** activity (bullish orders confirming support).
+  </Step>
+
+  <Step title="Resistance reaction">
+    If price approaches **MaxReward** or an overhead AOI, watch for **red text / red background** flows confirming resistance.
+  </Step>
+
+  <Step title="Trigger confirmation">
+    When price **crosses P-Trans**, confirm with **bullish orders** hitting the Tape (calls at ask, puts sold at bid).
+  </Step>
+
+  <Step title="Failure confirmation">
+    When price **loses N-Trans**, confirm with **bearish orders** (puts at ask, calls sold at bid).
+  </Step>
+</Steps>
+
+---
+
+## Filtering the Tape
+
+You can filter the Option Tape to isolate only the transactions that matter:  
+
+- **Premium filter** → e.g., `>= 1000000` shows only **$1M+ option trades**  
+- **DTE filter** → focus on contracts with **2–3 weeks to expiry** instead of noisy 0DTE  
+- **Equity Tape** → shows all equity prints (no premium filter, but color still applies)
+
+<Callout type="success">
+Filtering lets you **cut through noise** and see only the **institutional-sized, high-probability prints**.
+</Callout>
+
+---
+
+## Example workflow
+
+<Steps>
+  <Step title="Mark levels">
+    In the first 15 minutes, mark **P-Trans, N-Trans, AOIs, MaxReward, MaxPaint**.
+  </Step>
+  <Step title="Watch the Tape at levels">
+    As price reaches a level, look for Tape confirmation (**buyers at support, sellers at resistance**).
+  </Step>
+  <Step title="Apply filters">
+    Narrow to **$1M+ premium orders** or **2–3 week DTE** for higher conviction.
+  </Step>
+  <Step title="Combine with Option Flow">
+    If **both Flow + Tape agree** at a level, conviction is strongest.
+  </Step>
+</Steps>
+
+---
+
+## What to read next
+
+<Columns cols={2}>
+  <Card title="Option Flow" icon="arrows-left-right" href="/features/option-flow">
+    See how to interpret sweeps, blocks, and unusual activity.
+  </Card>
+  <Card title="Risk & Reward" icon="scale-balanced" href="/trading/risk-reward">
+    Structure trades using levels and Tape confirmation.
+  </Card>
+</Columns>
