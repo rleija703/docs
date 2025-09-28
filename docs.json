@@ -17,7 +17,6 @@
             "group": "Getting Started",
             "pages": [
               "index",
-              "getting-started/overview",
               "getting-started/signup",
               "getting-started/dashboard"
             ]
@@ -68,7 +67,7 @@
         {
           "anchor": "Community",
           "href": "https://www.skool.com/tge-free-4382",
-          "icon": "users"
+          "icon": "comments"
         }
       ]
     }

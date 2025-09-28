@@ -15,12 +15,11 @@ Use **P-Trans / N-Trans** to set bias, **Gamma walls** to spot support/resistanc
 
 ## See it in the app
 
-<Columns cols={2}>
-  <img src="https://alfatoro.com/wp-content/uploads/2025/05/gextron-hp-1-scaled.png" alt="Gextron Key Levels module" />
-  <img src="https://alfatoro.com/wp-content/uploads/2025/05/gextron-hp-1-scaled.png" alt="Chart with P-Trans, N-Trans, and Gamma walls" />
+<Columns cols={1}>
+  <Frame caption="META key levels">
+    <img src="https://alfatoro.com/wp-content/uploads/2025/09/meta-key-levels-markings.png" alt="Gextron Key Levels module" />
+  </Frame>
 </Columns>
-
----
 
 ## What each level means
 
@@ -30,7 +29,6 @@ Use **P-Trans / N-Trans** to set bias, **Gamma walls** to spot support/resistanc
     • Price holding **above P-Trans** signals bullish bias.  
     • Confirmation is stronger when the **hourly time frame** is also holding above.  
     • **How to identify:** P-Trans is the **first positive bar**, and the next **three strikes to the right** must also be positive.  
-    • Example: If **563** is the first positive bar and the next three strikes (564, 565, 566) are also positive, then **563 is P-Trans**.  
   </Accordion>
 
   <Accordion title="N-Trans (Negative Transition)">
@@ -38,7 +36,6 @@ Use **P-Trans / N-Trans** to set bias, **Gamma walls** to spot support/resistanc
     • Price holding **below N-Trans** signals bearish bias.  
     • Stronger confirmation when the **hourly timeframe** is also holding below.  
     • **How to identify:** N-Trans is the **first negative bar**, and the next **three strikes to the left** must also be negative.  
-    • Example: If **558** is the first negative bar and the next three strikes (557, 556, 555) are also negative, then **558 is N-Trans**.  
   </Accordion>
 
    <Accordion title="MaxReward (tallest positive bar)">
@@ -64,10 +61,11 @@ Use **P-Trans / N-Trans** to set bias, **Gamma walls** to spot support/resistanc
   </Accordion>
 </AccordionGroup>
 
-<Callout type="warning">
-Always confirm with **sweeps, blocks, or sustained tape pressure** before entering.
-</Callout>
+<Callout type="info" title="Strength matters">
+  Not all support/resistance levels are created equal.
 
+  Gextron **measures the strength** of each level based on option-premium dynamics, so you can quickly see which zones are **strong walls** versus weaker areas that may flip.
+</Callout>
 
 ---
 
@@ -115,72 +113,6 @@ flowchart TD
     I --> K[[If price sustains BELOW MaxPaint → strongest RESISTANCE]]
 
 ```
-
----
-
-## Pre-market routine (first 15 minutes)
-
-<Steps>
-  <Step title="Mark levels">
-    In the **first 15 minutes after market open**, mark **P-Trans**, **N-Trans**, **Areas of Interest (AOIs)**, and the **MaxReward / MaxPaint** levels. Note where **price** is relative to these.
-  </Step>
-
-  <Step title="Set bias">
-    If **price is above P-Trans → bullish**.  
-    If **price is below N-Trans → bearish**.  
-    If **between P-Trans and N-Trans → no-trade zone** — wait for a clean reclaim or breakdown.
-  </Step>
-
-  <Step title="Plan exits">
-    Start planning profit taking around **AOIs**.  
-    Take **most of the profit** if price approaches one of the **Max** levels (**MaxReward** or **MaxPaint**).
-  </Step>
-
-  <Step title="Confirm with flow">
-    Throughout the day, **confirm at levels** with **Option Flow** and **Tape** (look for aggressive buying/selling, sweeps, blocks) to validate the move.
-  </Step>
-</Steps>
-
-
----
-
-## Playbook (fast patterns)
-
-<Columns cols={2}>
-  <Card title="Reclaim Long" icon="arrow-trend-up">
-    Price reclaims **P-Trans** on volume + bullish sweeps → enter calls.  
-    TP1 = **nearest daily target**; TP2 = **next wall**. Stop **just below** reclaimed level.
-  </Card>
-  <Card title="Fail & Fade" icon="arrow-trend-down">
-    Price rejects **call Gamma wall** or **N-Trans** with bearish sweeps → enter puts/short.  
-    TP = **next support level or put wall**. Stop just above rejection wick.
-   </Card>
-</Columns>
-
----
-
-## Example walkthrough
-
-<Columns cols={2}>
-  <img src="/images/key-levels/example-1-before.png" alt="Before: price at P-Trans with flow setup" />
-  <img src="/images/key-levels/example-1-after.png" alt="After: move to target after reclaim" />
-</Columns>
-
-- **Setup**: SPX opens just under **P-Trans**, first push reclaims it on volume.  
-- **Confirm**: Option Flow prints **call sweeps**; Tape shows repeated hits at the ask.  
-- **Trade**: Long calls near reclaim; stop just below level; trim at **daily target**.  
-
-<Callout type="success">
-If R:R is **&lt; 1:2**, skip. Aim for **≥ 1:3** when possible.
-</Callout>
-
----
-
-## Common mistakes
-
-- Entering **far from** a level (poor R:R).  
-- Ignoring conflicting **flow/tape** signals.  
-- Overstaying beyond **targets/walls** without fresh confirmation.
 
 ---
 
